@@ -21,6 +21,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.4)
+    yard (0.9.37)
 
 PLATFORMS
   arm64-darwin-23
@@ -30,6 +31,7 @@ DEPENDENCIES
   chord_expression!
   rake (~> 13.0)
   rspec (~> 3.0)
+  yard
 
 BUNDLED WITH
    2.6.3
