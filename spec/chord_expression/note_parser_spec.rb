@@ -174,4 +174,66 @@ RSpec.describe ChordExpression::NoteParser do
       expect(parser.parse_flat_sharp[1]).to eq('flat')
     end
   end
+
+  describe '#note_index' do
+    it 'returns 0' do
+      parser = ChordExpression::NoteParser.new('A')
+      expect(parser.note_index).to eq(0)
+    end
+
+    it 'returns 1' do
+      parser = ChordExpression::NoteParser.new('Asharp')
+      expect(parser.note_index).to eq(1)
+    end
+
+    it 'returns 2' do
+      parser = ChordExpression::NoteParser.new('B')
+      expect(parser.note_index).to eq(2)
+    end
+
+    it 'returns 3' do
+      parser = ChordExpression::NoteParser.new('C')
+      expect(parser.note_index).to eq(3)
+    end 
+
+    it 'returns 4' do
+      parser = ChordExpression::NoteParser.new('Csharp')
+      expect(parser.note_index).to eq(4)
+    end
+
+    it 'returns 5' do
+      parser = ChordExpression::NoteParser.new('D')
+      expect(parser.note_index).to eq(5)
+    end
+
+    it 'returns 6' do 
+      parser = ChordExpression::NoteParser.new('Dsharp')
+      expect(parser.note_index).to eq(6)
+    end
+
+    it 'returns 7' do
+      parser = ChordExpression::NoteParser.new('E')
+      expect(parser.note_index).to eq(7)
+    end 
+
+    it 'returns 8' do
+      parser = ChordExpression::NoteParser.new('F')
+      expect(parser.note_index).to eq(8)
+    end
+
+    it 'returns 9' do
+      parser = ChordExpression::NoteParser.new('Fsharp')
+      expect(parser.note_index).to eq(9)
+    end
+
+    it 'returns 10' do  
+      parser = ChordExpression::NoteParser.new('G')
+      expect(parser.note_index).to eq(10)
+    end
+
+    it 'returns 11' do
+      parser = ChordExpression::NoteParser.new('Gsharp')
+      expect(parser.note_index).to eq(11)
+    end
+  end
 end
