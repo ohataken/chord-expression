@@ -22,5 +22,23 @@ module ChordExpression
         'G'
       end
     end
+
+    def note_name_with_flat
+      case @value
+      when 1
+        'Bflat'
+      when 4
+        'Dflat'
+      when 6
+        'Eflat'
+      when 9
+        'Gflat'
+      when 11
+        'Aflat'
+      else
+        note_name
+      end
+    end
+
   end
 end
