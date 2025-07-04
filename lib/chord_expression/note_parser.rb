@@ -11,5 +11,9 @@ module ChordExpression
     def parse_flat_sharp
       /^.(flat|sharp)?/.match(@note_string)
     end
+
+    def flat?
+      parse_flat_sharp[1] == 'flat'
+    end
   end
 end
