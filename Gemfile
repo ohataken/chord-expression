@@ -9,4 +9,5 @@ gem "rake", "~> 13.0"
 
 group :development, :test do
   gem "rspec", "~> 3.0"
+  gem "yard"
 end
