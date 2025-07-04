@@ -40,5 +40,21 @@ module ChordExpression
       end
     end
 
+    def note_name_with_sharp
+      case @value
+      when 1
+        'Asharp'
+      when 4
+        'Csharp'
+      when 6
+        'Dsharp'
+      when 9
+        'Fsharp'
+      when 11
+        'Gsharp'
+      else
+        note_name
+      end
+    end
   end
 end
