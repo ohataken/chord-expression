@@ -8,6 +8,10 @@ module ChordExpression
       /^([A-G])/.match(@note_string)
     end
 
+    def note_name
+      parse_note[1]
+    end
+
     def parse_flat_sharp
       /^.(flat|sharp)?/.match(@note_string)
     end
