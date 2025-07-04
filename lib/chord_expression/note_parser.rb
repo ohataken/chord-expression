@@ -15,5 +15,9 @@ module ChordExpression
     def flat?
       parse_flat_sharp[1] == 'flat'
     end
+
+    def sharp?
+      parse_flat_sharp[1] == 'sharp'
+    end
   end
 end
