@@ -70,5 +70,9 @@ module ChordExpression
     def perfect_fifth
       self.class.new((@value + 7) % 12)
     end
+
+    def minor_seventh
+      self.class.new((@value + 10) % 12)
+    end
   end
 end

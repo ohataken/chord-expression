@@ -145,4 +145,11 @@ RSpec.describe ChordExpression::Note do
       expect(note.perfect_fifth.value).to be(5)
     end
   end
+
+  describe '#minor_seventh' do
+    it 'returns F' do
+      note = ChordExpression::Note.new(10)
+      expect(note.minor_seventh.value).to be(8)
+    end
+  end
 end
