@@ -55,5 +55,10 @@ module ChordExpression
     def augmented_triad?
       @chord_string.include?('aug')
     end
+
+    def diminished_triad?
+      return if diminished_seventh?
+      @chord_string.include?('dim')
+    end
   end
 end
