@@ -74,5 +74,9 @@ module ChordExpression
     def minor_seventh
       self.class.new((@value + 10) % 12)
     end
+
+    def major_seventh
+      self.class.new((@value + 11) % 12)
+    end
   end
 end

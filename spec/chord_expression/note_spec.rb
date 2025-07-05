@@ -152,4 +152,11 @@ RSpec.describe ChordExpression::Note do
       expect(note.minor_seventh.value).to be(8)
     end
   end
+
+  describe '#major_seventh' do
+    it 'returns Fsharp' do
+      note = ChordExpression::Note.new(10)
+      expect(note.major_seventh.value).to be(9)
+    end
+  end
 end
