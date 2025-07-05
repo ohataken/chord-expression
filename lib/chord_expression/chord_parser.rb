@@ -51,5 +51,9 @@ module ChordExpression
       return if minor_seventh?
       @chord_string.include?('min')
     end
+
+    def augmented_triad?
+      @chord_string.include?('aug')
+    end
   end
 end
