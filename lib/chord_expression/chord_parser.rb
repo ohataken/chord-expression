@@ -5,7 +5,7 @@ module ChordExpression
     end
 
     def parse_root_note
-      NoteParser.new(@chord_string).parse_note
+      NoteParser.new(@chord_string).parse
     end
 
     def minor_major_seventh?
