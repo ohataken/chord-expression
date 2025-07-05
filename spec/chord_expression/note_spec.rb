@@ -131,4 +131,11 @@ RSpec.describe ChordExpression::Note do
       expect(note.minor_third.value).to be(1)
     end
   end
+
+  describe '#major_third' do
+    it 'returns B' do
+      note = ChordExpression::Note.new(10)
+      expect(note.major_third.value).to be(2)
+    end
+  end
 end

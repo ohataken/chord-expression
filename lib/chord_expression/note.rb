@@ -62,5 +62,9 @@ module ChordExpression
     def minor_third
       self.class.new((@value + 3) % 12)
     end
+
+    def major_third
+      self.class.new((@value + 4) % 12)
+    end
   end
 end
