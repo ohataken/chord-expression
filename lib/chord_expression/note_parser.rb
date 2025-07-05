@@ -4,6 +4,10 @@ module ChordExpression
       @note_string = note_string
     end
 
+    def parse
+      Note.new(note_index)
+    end
+
     def parse_note
       /^([A-G])/.match(@note_string)
     end
