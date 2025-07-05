@@ -3,7 +3,7 @@ module ChordExpression
     def initialize(note_string)
       @note_string = note_string
     end
-    
+
     def parse_note
       /^([A-G])/.match(@note_string)
     end
