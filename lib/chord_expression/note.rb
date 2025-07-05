@@ -1,5 +1,7 @@
 module ChordExpression
   class Note
+    attr_reader :value
+
     def initialize(value)
       @value = value
     end
