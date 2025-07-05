@@ -33,5 +33,18 @@ module ChordExpression
     def diminished_seventh?
       @chord_string.include?('dim7')
     end
+
+    def major_triad?
+      return if minor_major_seventh?
+      return if minor_seventh?
+      return if major_seventh?
+      return if dominant_seventh?
+      return if diminished_seventh?
+      return if minor_triad?
+      return if augmented_triad?
+      return if diminished_triad?
+
+      true
+    end
   end
 end
