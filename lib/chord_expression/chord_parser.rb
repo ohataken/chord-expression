@@ -16,5 +16,10 @@ module ChordExpression
       return if minor_major_seventh?
       @chord_string.include?('min7')
     end
+
+    def major_seventh?
+      return if minor_major_seventh?
+      @chord_string.include?('maj7')
+    end
   end
 end
