@@ -46,5 +46,10 @@ module ChordExpression
 
       true
     end
+
+    def minor_triad?
+      return if minor_seventh?
+      @chord_string.include?('min')
+    end
   end
 end
