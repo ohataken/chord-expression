@@ -138,4 +138,11 @@ RSpec.describe ChordExpression::Note do
       expect(note.major_third.value).to be(2)
     end
   end
+
+  describe '#perfect_fifth' do
+    it 'returns G' do
+      note = ChordExpression::Note.new(10)
+      expect(note.perfect_fifth.value).to be(5)
+    end
+  end
 end
