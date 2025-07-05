@@ -124,4 +124,11 @@ RSpec.describe ChordExpression::Note do
       expect(note.note_name_with_sharp).to eq('Gsharp')
     end
   end
+
+  describe '#minor_third' do
+    it 'returns Bflat' do
+      note = ChordExpression::Note.new(10)
+      expect(note.minor_third.value).to be(1)
+    end
+  end
 end
