@@ -1,4 +1,11 @@
 # frozen_string_literal: true
 
 RSpec.describe ChordExpression::Chord do
+  describe '#triad?' do
+    it 'returns true for major triad' do
+      chord_parser = ChordExpression::ChordParser.new('Cmaj')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.triad?).to be(true)
+    end
+  end
 end
