@@ -29,5 +29,9 @@ module ChordExpression
       return if diminished_seventh?
       @chord_string.include?('7')
     end
+
+    def diminished_seventh?
+      @chord_string.include?('dim7')
+    end
   end
 end
