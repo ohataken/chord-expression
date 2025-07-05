@@ -4,6 +4,10 @@ module ChordExpression
       @chord_string = chord_string
     end
 
+    def parse
+      Chord.new(self, parse_root_note)
+    end
+
     def parse_root_note
       NoteParser.new(@chord_string).parse
     end

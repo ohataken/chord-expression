@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 RSpec.describe ChordExpression::ChordParser do
+  describe '#parse' do
+    it 'returns a chord' do
+      chord_parser = ChordExpression::ChordParser.new('A')
+      expect(chord_parser.parse).to be_a(ChordExpression::Chord)
+      expect(chord_parser.parse.root_note.value).to be(0)
+    end
+  end
+
   describe '#minor_major_seventh?' do
     it 'returns false if the chord is A' do
       chord_parser = ChordExpression::ChordParser.new('A')
