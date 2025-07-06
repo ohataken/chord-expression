@@ -71,6 +71,14 @@ module ChordExpression
       end
     end
 
+    def note_names
+      if black_key?
+        [note_name_with_sharp, note_name_with_flat]
+      else
+        [note_name]
+      end
+    end
+
     def minor_third
       self.class.new((@value + 3) % 12)
     end

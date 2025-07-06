@@ -249,6 +249,18 @@ RSpec.describe ChordExpression::Note do
     end
   end
 
+  describe '#note_names' do
+    it 'accepts A' do
+      note = ChordExpression::Note.new(0)
+      expect(note.note_names).to eq(['A'])
+    end
+
+    it 'accepts Bflat' do
+      note = ChordExpression::Note.new(1)
+      expect(note.note_names).to eq(['Asharp','Bflat'])
+    end
+  end
+
   describe '#minor_third' do
     it 'returns Bflat' do
       note = ChordExpression::Note.new(10)
