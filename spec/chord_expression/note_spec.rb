@@ -1,6 +1,68 @@
 # frozen_string_literal: true
 
 RSpec.describe ChordExpression::Note do
+  describe '#black_key?' do
+    it 'accepts A, then returns false' do
+      note = ChordExpression::Note.new(0)
+      expect(note.black_key?).to be_falsey
+    end
+
+    it 'accepts Bflat, then returns true' do
+      note = ChordExpression::Note.new(1)
+      expect(note.black_key?).to be_truthy
+    end
+
+    it 'accepts B, then returns false' do
+      note = ChordExpression::Note.new(2)
+      expect(note.black_key?).to be_falsey
+    end
+
+    it 'accepts C, then returns false' do
+      note = ChordExpression::Note.new(3)
+      expect(note.black_key?).to be_falsey
+    end
+
+    it 'accepts Dflat, then returns true' do
+      note = ChordExpression::Note.new(4)
+      expect(note.black_key?).to be_truthy
+    end
+
+    it 'accepts D, then returns false' do
+      note = ChordExpression::Note.new(5)
+      expect(note.black_key?).to be_falsey
+    end
+
+    it 'accepts Eflat, then returns true' do
+      note = ChordExpression::Note.new(6)
+      expect(note.black_key?).to be_truthy
+    end
+
+    it 'accepts E, then returns false' do
+      note = ChordExpression::Note.new(7)
+      expect(note.black_key?).to be_falsey
+    end
+
+    it 'accepts F, then returns false' do
+      note = ChordExpression::Note.new(8)
+      expect(note.black_key?).to be_falsey
+    end
+
+    it 'accepts Gflat, then returns true' do
+      note = ChordExpression::Note.new(9)
+      expect(note.black_key?).to be_truthy
+    end
+
+    it 'accepts G, then returns false' do
+      note = ChordExpression::Note.new(10)
+      expect(note.black_key?).to be_falsey
+    end
+
+    it 'accepts Aflat, then returns true' do
+      note = ChordExpression::Note.new(11)
+      expect(note.black_key?).to be_truthy
+    end
+  end
+
   describe '#note_name_with_flat' do
     it 'returns A' do
       note = ChordExpression::Note.new(0)

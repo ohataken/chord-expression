@@ -25,6 +25,14 @@ module ChordExpression
       end
     end
 
+    def black_key?
+      return true if @value == 1
+      return true if @value == 4
+      return true if @value == 6
+      return true if @value == 9
+      return true if @value == 11
+    end
+
     def note_name_with_flat
       case @value
       when 1
