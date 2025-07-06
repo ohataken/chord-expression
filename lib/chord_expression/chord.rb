@@ -31,6 +31,11 @@ module ChordExpression
       return true if @chord_parser.diminished_seventh?
     end
 
+    # @see ChordParser#minor_major_seventh?
+    # @see ChordParser#minor_seventh?
+    # @see ChordParser#minor_triad?
+    # @see ChordParser#augmented_triad?
+    # @see ChordParser#diminished_triad?
     def minor_third?
       return true if @chord_parser.minor_major_seventh?
       return true if @chord_parser.minor_seventh?
