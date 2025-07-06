@@ -44,6 +44,10 @@ module ChordExpression
       return true if @chord_parser.diminished_triad?
     end
 
+    # @see ChordParser#major_seventh?
+    # @see ChordParser#dominant_seventh?
+    # @see ChordParser#major_triad?
+    # @see ChordParser#augmented_triad?
     def major_third?
       return true if @chord_parser.major_seventh?
       return true if @chord_parser.dominant_seventh?
