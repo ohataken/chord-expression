@@ -18,6 +18,11 @@ module ChordExpression
       return true if @chord_parser.diminished_triad?
     end
 
+    # @see ChordParser#minor_major_seventh?
+    # @see ChordParser#minor_seventh?
+    # @see ChordParser#major_seventh?
+    # @see ChordParser#dominant_seventh?
+    # @see ChordParser#diminished_seventh?
     def seventh?
       return true if @chord_parser.minor_major_seventh?
       return true if @chord_parser.minor_seventh?
