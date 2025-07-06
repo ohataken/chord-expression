@@ -60,7 +60,7 @@ RSpec.describe ChordExpression::NoteParser do
     it 'parses F' do
       parser = ChordExpression::NoteParser.new('F')
       expect(parser.parse_note[1]).to eq('F')
-    end 
+    end
 
     it 'parses Fsharp' do
       parser = ChordExpression::NoteParser.new('Fsharp')
@@ -147,7 +147,7 @@ RSpec.describe ChordExpression::NoteParser do
     it 'parses F' do
       parser = ChordExpression::NoteParser.new('F')
       expect(parser.parse_flat_sharp[1]).to be_nil
-    end 
+    end
 
     it 'parses Fsharp' do
       parser = ChordExpression::NoteParser.new('Fsharp')
@@ -194,7 +194,7 @@ RSpec.describe ChordExpression::NoteParser do
     it 'returns 3' do
       parser = ChordExpression::NoteParser.new('C')
       expect(parser.note_index).to eq(3)
-    end 
+    end
 
     it 'returns 4' do
       parser = ChordExpression::NoteParser.new('Csharp')
@@ -206,7 +206,7 @@ RSpec.describe ChordExpression::NoteParser do
       expect(parser.note_index).to eq(5)
     end
 
-    it 'returns 6' do 
+    it 'returns 6' do
       parser = ChordExpression::NoteParser.new('Dsharp')
       expect(parser.note_index).to eq(6)
     end
@@ -214,7 +214,7 @@ RSpec.describe ChordExpression::NoteParser do
     it 'returns 7' do
       parser = ChordExpression::NoteParser.new('E')
       expect(parser.note_index).to eq(7)
-    end 
+    end
 
     it 'returns 8' do
       parser = ChordExpression::NoteParser.new('F')
@@ -226,7 +226,7 @@ RSpec.describe ChordExpression::NoteParser do
       expect(parser.note_index).to eq(9)
     end
 
-    it 'returns 10' do  
+    it 'returns 10' do
       parser = ChordExpression::NoteParser.new('G')
       expect(parser.note_index).to eq(10)
     end
