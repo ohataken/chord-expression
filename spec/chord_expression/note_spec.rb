@@ -63,6 +63,68 @@ RSpec.describe ChordExpression::Note do
     end
   end
 
+  describe '#white_key?' do
+    it 'accepts A, then returns true' do
+      note = ChordExpression::Note.new(0)
+      expect(note.white_key?).to be_truthy
+    end
+
+    it 'accepts Bflat, then returns false' do
+      note = ChordExpression::Note.new(1)
+      expect(note.white_key?).to be_falsey
+    end
+
+    it 'accepts B, then returns true' do
+      note = ChordExpression::Note.new(2)
+      expect(note.white_key?).to be_truthy
+    end
+
+    it 'accepts C, then returns true' do
+      note = ChordExpression::Note.new(3)
+      expect(note.white_key?).to be_truthy
+    end
+
+    it 'accepts Dflat, then returns false' do
+      note = ChordExpression::Note.new(4)
+      expect(note.white_key?).to be_falsey
+    end
+
+    it 'accepts D, then returns true' do
+      note = ChordExpression::Note.new(5)
+      expect(note.white_key?).to be_truthy
+    end
+
+    it 'accepts Eflat, then returns false' do
+      note = ChordExpression::Note.new(6)
+      expect(note.white_key?).to be_falsey
+    end
+
+    it 'accepts E, then returns true' do
+      note = ChordExpression::Note.new(7)
+      expect(note.white_key?).to be_truthy
+    end
+
+    it 'accepts F, then returns true' do
+      note = ChordExpression::Note.new(8)
+      expect(note.white_key?).to be_truthy
+    end
+
+    it 'accepts Gflat, then returns false' do
+      note = ChordExpression::Note.new(9)
+      expect(note.white_key?).to be_falsey
+    end
+
+    it 'accepts G, then returns true' do
+      note = ChordExpression::Note.new(10)
+      expect(note.white_key?).to be_truthy
+    end
+
+    it 'accepts Aflat, then returns false' do
+      note = ChordExpression::Note.new(11)
+      expect(note.white_key?).to be_falsey
+    end
+  end
+
   describe '#note_name_with_flat' do
     it 'returns A' do
       note = ChordExpression::Note.new(0)

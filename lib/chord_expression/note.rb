@@ -33,6 +33,10 @@ module ChordExpression
       return true if @value == 11
     end
 
+    def white_key?
+      !black_key?
+    end
+
     def note_name_with_flat
       case @value
       when 1
