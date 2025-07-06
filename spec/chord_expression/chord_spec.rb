@@ -56,4 +56,12 @@ RSpec.describe ChordExpression::Chord do
       expect(chord.seventh.value).to be(2)
     end
   end
+
+  describe '#chord_name_with_flat' do
+    it 'returns the chord name with flat' do
+      chord_parser = ChordExpression::ChordParser.new('Csharpmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_name_with_flat).to eq('Dflatmaj7')
+    end
+  end
 end
