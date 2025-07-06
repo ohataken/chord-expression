@@ -74,5 +74,27 @@ module ChordExpression
         @root_note.major_seventh
       end
     end
+
+    def chord_modifier_name
+      if @chord_parser.minor_major_seventh?
+        'mmaj7'
+      elsif @chord_parser.minor_seventh?
+        'min7'
+      elsif @chord_parser.major_seventh?
+        'maj7'
+      elsif @chord_parser.dominant_seventh?
+        '7'
+      elsif @chord_parser.diminished_seventh?
+        'dim7'
+      elsif @chord_parser.minor_triad?
+        'min'
+      elsif @chord_parser.major_triad?
+        'maj'
+      elsif @chord_parser.augmented_triad?
+        'aug'
+      elsif @chord_parser.diminished_triad?
+        'dim'
+      end
+    end
   end
 end
