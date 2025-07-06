@@ -44,5 +44,13 @@ module ChordExpression
 
       true
     end
+
+    def third
+      if minor_third?
+        @root_note.minor_third
+      elsif major_third?
+        @root_note.major_third
+      end
+    end
   end
 end

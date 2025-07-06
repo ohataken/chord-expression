@@ -32,4 +32,12 @@ RSpec.describe ChordExpression::Chord do
       expect(chord.major_third?).to be(true)
     end
   end
+
+  describe '#third' do
+    it 'returns the third of the chord' do
+      chord_parser = ChordExpression::ChordParser.new('Cmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.third.value).to be(7)
+    end
+  end
 end
