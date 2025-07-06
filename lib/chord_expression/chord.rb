@@ -16,5 +16,14 @@ module ChordExpression
 
       true
     end
+
+    def seventh?
+      return if @chord_parser.major_triad?
+      return if @chord_parser.minor_triad?
+      return if @chord_parser.augmented_triad?
+      return if @chord_parser.diminished_triad?
+
+      true
+    end
   end
 end

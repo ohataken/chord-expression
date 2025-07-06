@@ -8,4 +8,12 @@ RSpec.describe ChordExpression::Chord do
       expect(chord.triad?).to be(true)
     end
   end
+
+  describe '#seventh?' do
+    it 'returns true for major seventh' do
+      chord_parser = ChordExpression::ChordParser.new('Cmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh?).to be(true)
+    end
+  end
 end
