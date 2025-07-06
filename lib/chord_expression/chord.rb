@@ -56,5 +56,23 @@ module ChordExpression
     def fifth
       @root_note.perfect_fifth
     end
+
+    def seventh
+      return unless seventh?
+
+      if @chord_parser.minor_major_seventh?
+        @root_note.major_seventh
+      elsif @chord_parser.minor_seventh?
+        @root_note.minor_seventh
+      elsif @chord_parser.major_seventh?
+        @root_note.major_seventh
+      elsif @chord_parser.dominant_seventh?
+        @root_note.major_seventh
+      elsif @chord_parser.diminished_seventh?
+        @root_note.minor_seventh
+      elsif major_seventh?
+        @root_note.major_seventh
+      end
+    end
   end
 end

@@ -49,4 +49,11 @@ RSpec.describe ChordExpression::Chord do
     end
   end
 
+  describe '#seventh' do
+    it 'returns the seventh of the chord' do
+      chord_parser = ChordExpression::ChordParser.new('Cmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh.value).to be(2)
+    end
+  end
 end
