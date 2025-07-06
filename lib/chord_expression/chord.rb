@@ -7,6 +7,10 @@ module ChordExpression
       @root_note = root_note
     end
 
+    # @see ChordParser#major_triad?
+    # @see ChordParser#minor_triad?
+    # @see ChordParser#augmented_triad?
+    # @see ChordParser#diminished_triad?
     def triad?
       return true if @chord_parser.major_triad?
       return true if @chord_parser.minor_triad?
