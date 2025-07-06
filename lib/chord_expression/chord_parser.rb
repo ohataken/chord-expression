@@ -18,11 +18,13 @@ module ChordExpression
 
     def minor_seventh?
       return if minor_major_seventh?
+
       @chord_string.include?('min7')
     end
 
     def major_seventh?
       return if minor_major_seventh?
+
       @chord_string.include?('maj7')
     end
 
@@ -31,6 +33,7 @@ module ChordExpression
       return if minor_seventh?
       return if major_seventh?
       return if diminished_seventh?
+
       @chord_string.include?('7')
     end
 
@@ -53,6 +56,7 @@ module ChordExpression
 
     def minor_triad?
       return if minor_seventh?
+
       @chord_string.include?('min')
     end
 
@@ -62,6 +66,7 @@ module ChordExpression
 
     def diminished_triad?
       return if diminished_seventh?
+
       @chord_string.include?('dim')
     end
   end
