@@ -52,5 +52,9 @@ module ChordExpression
         @root_note.major_third
       end
     end
+
+    def fifth
+      @root_note.perfect_fifth
+    end
   end
 end

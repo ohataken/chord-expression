@@ -40,4 +40,13 @@ RSpec.describe ChordExpression::Chord do
       expect(chord.third.value).to be(7)
     end
   end
+
+  describe '#fifth' do
+    it 'returns the fifth of the chord' do
+      chord_parser = ChordExpression::ChordParser.new('Cmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.fifth.value).to be(10)
+    end
+  end
+
 end
