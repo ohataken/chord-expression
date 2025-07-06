@@ -34,5 +34,15 @@ module ChordExpression
 
       true
     end
+
+    def major_third?
+      return if @chord_parser.minor_major_seventh?
+      return if @chord_parser.minor_seventh?
+      return if @chord_parser.minor_triad?
+      return if @chord_parser.augmented_triad?
+      return if @chord_parser.diminished_triad?
+
+      true
+    end
   end
 end

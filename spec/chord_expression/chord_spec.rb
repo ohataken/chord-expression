@@ -24,4 +24,12 @@ RSpec.describe ChordExpression::Chord do
       expect(chord.minor_third?).to be(true)
     end
   end
+
+  describe '#major_third?' do
+    it 'returns true for major third' do
+      chord_parser = ChordExpression::ChordParser.new('Cmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.major_third?).to be(true)
+    end
+  end
 end
