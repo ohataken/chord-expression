@@ -16,4 +16,12 @@ RSpec.describe ChordExpression::Chord do
       expect(chord.seventh?).to be(true)
     end
   end
+
+  describe '#minor_third?' do
+    it 'returns true for minor third' do
+      chord_parser = ChordExpression::ChordParser.new('Cmin')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.minor_third?).to be(true)
+    end
+  end
 end
