@@ -100,5 +100,9 @@ module ChordExpression
     def chord_name_with_flat
       "#{@root_note.note_name_with_flat}#{chord_modifier_name}"
     end
+
+    def chord_name_with_sharp
+      "#{@root_note.note_name_with_sharp}#{chord_modifier_name}"
+    end
   end
 end
