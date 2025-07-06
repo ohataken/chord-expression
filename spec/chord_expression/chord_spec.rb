@@ -72,4 +72,18 @@ RSpec.describe ChordExpression::Chord do
       expect(chord.chord_name_with_sharp).to eq('Csharpmaj7')
     end
   end
+
+  describe '#chord_names' do
+    it 'accepts Amaj' do
+      chord_parser = ChordExpression::ChordParser.new('Amaj')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_names).to eq(['Amaj'])
+    end
+
+    it 'accepts Bflatmaj7' do
+      chord_parser = ChordExpression::ChordParser.new('Bflatmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_names).to eq(['Asharpmaj7', 'Bflatmaj7'])
+    end
+  end
 end

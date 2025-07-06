@@ -96,5 +96,13 @@ module ChordExpression
     def chord_name_with_sharp
       "#{@root_note.note_name_with_sharp}#{chord_modifier_name}"
     end
+
+    def chord_names
+      if @root_note.black_key?
+        [chord_name_with_sharp, chord_name_with_flat]
+      else
+        [chord_name_with_flat]
+      end
+    end
   end
 end
