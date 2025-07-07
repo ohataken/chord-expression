@@ -282,6 +282,13 @@ RSpec.describe ChordExpression::Note do
     end
   end
 
+  describe '#diminished_seventh' do
+    it 'returns F' do
+      note = ChordExpression::Note.new(10)
+      expect(note.diminished_seventh.value).to be(7)
+    end
+  end
+
   describe '#minor_seventh' do
     it 'returns F' do
       note = ChordExpression::Note.new(10)
