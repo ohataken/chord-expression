@@ -79,7 +79,7 @@ module ChordExpression
       elsif @chord_parser.dominant_seventh?
         @root_note.minor_seventh
       elsif @chord_parser.diminished_seventh?
-        @root_note.minor_seventh
+        @root_note.diminished_seventh
       elsif major_seventh?
         @root_note.major_seventh
       end
