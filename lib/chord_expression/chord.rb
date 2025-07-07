@@ -77,7 +77,7 @@ module ChordExpression
       elsif @chord_parser.major_seventh?
         @root_note.major_seventh
       elsif @chord_parser.dominant_seventh?
-        @root_note.major_seventh
+        @root_note.minor_seventh
       elsif @chord_parser.diminished_seventh?
         @root_note.minor_seventh
       elsif major_seventh?
