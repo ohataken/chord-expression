@@ -95,6 +95,10 @@ module ChordExpression
       self.class.new((@value + 7) % 12)
     end
 
+    def augmented_fifth
+      self.class.new((@value + 8) % 12)
+    end
+
     def diminished_seventh
       self.class.new((@value + 9) % 12)
     end

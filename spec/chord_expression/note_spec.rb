@@ -289,6 +289,13 @@ RSpec.describe ChordExpression::Note do
     end
   end
 
+  describe '#augmented_fifth' do
+    it 'returns Gsharp' do
+      note = ChordExpression::Note.new(10)
+      expect(note.augmented_fifth.value).to be(6)
+    end
+  end
+
   describe '#diminished_seventh' do
     it 'returns F' do
       note = ChordExpression::Note.new(10)
