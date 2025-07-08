@@ -64,7 +64,15 @@ module ChordExpression
     end
 
     def fifth
-      @root_note.perfect_fifth
+      if @chord_parser.diminished_seventh?
+        @root_note.diminished_fifth
+      elsif @chord_parser.augmented_triad?
+        @root_note.augmented_fifth
+      elsif @chord_parser.diminished_triad?
+        @root_note.diminished_fifth
+      else
+        @root_note.perfect_fifth
+      end
     end
 
     def seventh
