@@ -87,6 +87,10 @@ module ChordExpression
       self.class.new((@value + 4) % 12)
     end
 
+    def diminished_fifth
+      self.class.new((@value + 6) % 12)
+    end
+
     def perfect_fifth
       self.class.new((@value + 7) % 12)
     end

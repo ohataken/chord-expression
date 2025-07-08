@@ -275,6 +275,13 @@ RSpec.describe ChordExpression::Note do
     end
   end
 
+  describe '#diminished_fifth' do
+    it 'returns F' do
+      note = ChordExpression::Note.new(10)
+      expect(note.diminished_fifth.value).to be(4)
+    end
+  end
+
   describe '#perfect_fifth' do
     it 'returns G' do
       note = ChordExpression::Note.new(10)
