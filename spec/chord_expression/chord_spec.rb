@@ -42,25 +42,25 @@ RSpec.describe ChordExpression::Chord do
   end
 
   describe '#fifth' do
-    it 'returns the diminished fifth of the chord' do
+    it 'returns the diminished fifth of Cdim7' do
       chord_parser = ChordExpression::ChordParser.new('Cdim7')
       chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
       expect(chord.fifth.value).to be(9)
     end
 
-    it 'returns the diminished fifth of the chord' do
+    it 'returns the diminished fifth of Cdim' do
       chord_parser = ChordExpression::ChordParser.new('Cdim')
       chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
       expect(chord.fifth.value).to be(9)
     end
 
-    it 'returns the fifth of the chord' do
+    it 'returns the fifth of Cmaj7' do
       chord_parser = ChordExpression::ChordParser.new('Cmaj7')
       chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
       expect(chord.fifth.value).to be(10)
     end
 
-    it 'returns the augmented fifth of the chord' do
+    it 'returns the augmented fifth of Caug' do
       chord_parser = ChordExpression::ChordParser.new('Caug')
       chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
       expect(chord.fifth.value).to be(11)
