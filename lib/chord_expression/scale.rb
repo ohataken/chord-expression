@@ -85,5 +85,12 @@ module ChordExpression
         chord_parser.parse
       end
     end
+
+    def vi_seventh_chord
+      if major?
+        chord_parser = ChordParser.new("#{vi_root_note.note_name_with_sharp}min7")
+        chord_parser.parse
+      end
+    end
   end
 end

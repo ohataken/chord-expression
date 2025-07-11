@@ -96,4 +96,12 @@ RSpec.describe ChordExpression::Scale do
       expect(scale.v_seventh_chord.chord_name_with_sharp).to eq('E7')
     end
   end
+
+  describe '#vi_seventh_chord' do
+    it 'returns the vi seventh chord' do
+      note = ChordExpression::Note.new(0)
+      scale = ChordExpression::Scale.new(note)
+      expect(scale.vi_seventh_chord.chord_name_with_sharp).to eq('Fsharpmin7')
+    end
+  end
 end
