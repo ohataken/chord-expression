@@ -7,5 +7,9 @@ module ChordExpression
     def root_note_parser
       NoteParser.new(@scale_string)
     end
+
+    def major?
+      @scale_string.include?('maj')
+    end
   end
 end

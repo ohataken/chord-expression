@@ -14,4 +14,16 @@ RSpec.describe ChordExpression::ScaleParser do
       expect(note_parser).to be_a(ChordExpression::NoteParser)
     end
   end
+
+  describe '#major?' do
+    it 'returns true for Amaj' do
+      parser = ChordExpression::ScaleParser.new('Amaj')
+      expect(parser.major?).to eq(true)
+    end
+
+    it 'returns false for Amin' do
+      parser = ChordExpression::ScaleParser.new('Amin')
+      expect(parser.major?).to eq(false)
+    end
+  end
 end
