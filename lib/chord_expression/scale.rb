@@ -1,6 +1,7 @@
 module ChordExpression
   class Scale
-    def initialize(root_note)
+    def initialize(scale_parser, root_note)
+      @scale_parser = scale_parser
       @root_note = root_note
     end
 
