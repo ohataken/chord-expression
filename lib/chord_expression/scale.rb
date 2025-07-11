@@ -5,11 +5,6 @@ module ChordExpression
       @root_note = root_note
     end
 
-    # @todo
-    def major?
-      true
-    end
-
     def i_root_note
       @root_note
     end
