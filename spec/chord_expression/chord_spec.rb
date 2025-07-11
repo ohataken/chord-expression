@@ -116,8 +116,26 @@ RSpec.describe ChordExpression::Chord do
   end
 
   describe '#major_third?' do
-    it 'returns true for major third' do
+    it 'returns true for major seventh' do
       chord_parser = ChordExpression::ChordParser.new('Cmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.major_third?).to be(true)
+    end
+
+    it 'returns true for dominant seventh' do
+      chord_parser = ChordExpression::ChordParser.new('C7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.major_third?).to be(true)
+    end
+
+    it 'returns true for major triad' do
+      chord_parser = ChordExpression::ChordParser.new('Cmaj')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.major_third?).to be(true)
+    end
+
+    it 'returns true for augmented triad' do
+      chord_parser = ChordExpression::ChordParser.new('Caug')
       chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
       expect(chord.major_third?).to be(true)
     end
