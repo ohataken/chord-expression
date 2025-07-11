@@ -56,4 +56,12 @@ RSpec.describe ChordExpression::Scale do
       expect(scale.vii_root_note.value).to eq(note.value + 11)
     end
   end
+
+  describe '#i_seventh_chord' do
+    it 'returns the i seventh chord' do
+      note = ChordExpression::Note.new(0)
+      scale = ChordExpression::Scale.new(note)
+      expect(scale.i_seventh_chord.chord_name_with_sharp).to eq('Amaj7')
+    end
+  end
 end
