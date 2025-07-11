@@ -26,4 +26,16 @@ RSpec.describe ChordExpression::ScaleParser do
       expect(parser.major?).to eq(false)
     end
   end
+
+  describe '#minor?' do
+    it 'returns false for Amaj' do
+      parser = ChordExpression::ScaleParser.new('Amaj')
+      expect(parser.minor?).to eq(false)
+    end
+
+    it 'returns true for Amin' do
+      parser = ChordExpression::ScaleParser.new('Amin')
+      expect(parser.minor?).to eq(true)
+    end
+  end
 end

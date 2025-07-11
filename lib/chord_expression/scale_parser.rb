@@ -11,5 +11,9 @@ module ChordExpression
     def major?
       @scale_string.include?('maj')
     end
+
+    def minor?
+      @scale_string.include?('min')
+    end
   end
 end
