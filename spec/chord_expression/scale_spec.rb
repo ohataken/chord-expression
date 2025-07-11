@@ -40,4 +40,12 @@ RSpec.describe ChordExpression::Scale do
       expect(scale.v_root_note.value).to eq(note.value + 7)
     end
   end
+
+  describe '#vi_root_note' do
+    it 'returns the vi root note' do
+      note = ChordExpression::Note.new(0)
+      scale = ChordExpression::Scale.new(note)
+      expect(scale.vi_root_note.value).to eq(note.value + 9)
+    end
+  end
 end

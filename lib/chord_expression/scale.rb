@@ -38,5 +38,11 @@ module ChordExpression
         Note.new((@root_note.value + 7) % 12)
       end
     end
+
+    def vi_root_note
+      if major?
+        Note.new((@root_note.value + 9) % 12)
+      end
+    end
   end
 end
