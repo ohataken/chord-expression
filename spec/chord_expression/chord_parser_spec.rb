@@ -59,6 +59,11 @@ RSpec.describe ChordExpression::ChordParser do
       chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
       expect(chord_parser.minor_major_seventh?).to be_falsey
     end
+
+    it 'returns true if the chord is Cminflat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cminflat5')
+      expect(chord_parser.minor_major_seventh?).to be_falsey
+    end
   end
 
   describe '#minor_seventh_flat_five?' do
@@ -111,6 +116,10 @@ RSpec.describe ChordExpression::ChordParser do
       chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
       expect(chord_parser.minor_seventh_flat_five?).to be_truthy
     end
+
+    it 'returns true if the chord is Cminflat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cminflat5')
+      expect(chord_parser.minor_seventh_flat_five?).to be_falsey
     end
   end
 
@@ -162,6 +171,11 @@ RSpec.describe ChordExpression::ChordParser do
 
     it 'returns true if the chord is Cmin7flat5' do
       chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
+      expect(chord_parser.minor_seventh?).to be_falsey
+    end
+
+    it 'returns true if the chord is Cminflat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cminflat5')
       expect(chord_parser.minor_seventh?).to be_falsey
     end
   end
@@ -216,6 +230,11 @@ RSpec.describe ChordExpression::ChordParser do
       chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
       expect(chord_parser.major_seventh?).to be_falsey
     end
+
+    it 'returns true if the chord is Cminflat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cminflat5')
+      expect(chord_parser.major_seventh?).to be_falsey
+    end
   end
 
   describe '#dominant_seventh?' do
@@ -266,6 +285,11 @@ RSpec.describe ChordExpression::ChordParser do
 
     it 'returns true if the chord is Cmin7flat5' do
       chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
+      expect(chord_parser.dominant_seventh?).to be_falsey
+    end
+
+    it 'returns true if the chord is Cminflat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cminflat5')
       expect(chord_parser.dominant_seventh?).to be_falsey
     end
   end
@@ -320,6 +344,11 @@ RSpec.describe ChordExpression::ChordParser do
       chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
       expect(chord_parser.diminished_seventh?).to be_falsey
     end
+
+    it 'returns true if the chord is Cminflat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cminflat5')
+      expect(chord_parser.diminished_seventh?).to be_falsey
+    end
   end
 
   describe '#major_triad?' do
@@ -370,6 +399,11 @@ RSpec.describe ChordExpression::ChordParser do
 
     it 'returns true if the chord is Cmin7flat5' do
       chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
+      expect(chord_parser.major_triad?).to be_falsey
+    end
+
+    it 'returns true if the chord is Cminflat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cminflat5')
       expect(chord_parser.major_triad?).to be_falsey
     end
   end
@@ -424,6 +458,11 @@ RSpec.describe ChordExpression::ChordParser do
       chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
       expect(chord_parser.minor_triad?).to be_falsey
     end
+
+    it 'returns true if the chord is Cminflat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cminflat5')
+      expect(chord_parser.minor_triad?).to be_falsey
+    end
   end
 
   describe '#augmented_triad?' do
@@ -476,6 +515,11 @@ RSpec.describe ChordExpression::ChordParser do
       chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
       expect(chord_parser.augmented_triad?).to be_falsey
     end
+
+    it 'returns true if the chord is Cminflat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cminflat5')
+      expect(chord_parser.augmented_triad?).to be_falsey
+    end
   end
 
   describe '#diminished_triad?' do
@@ -526,6 +570,11 @@ RSpec.describe ChordExpression::ChordParser do
 
     it 'returns true if the chord is Cmin7flat5' do
       chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
+      expect(chord_parser.diminished_triad?).to be_falsey
+    end
+
+    it 'returns true if the chord is Cminflat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cminflat5')
       expect(chord_parser.diminished_triad?).to be_falsey
     end
   end

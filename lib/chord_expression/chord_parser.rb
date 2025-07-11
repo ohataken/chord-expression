@@ -54,6 +54,7 @@ module ChordExpression
       return if major_seventh?
       return if dominant_seventh?
       return if diminished_seventh?
+      return if minor_triad_flat_five?
       return if minor_triad?
       return if augmented_triad?
       return if diminished_triad?
@@ -61,9 +62,17 @@ module ChordExpression
       true
     end
 
+    def minor_triad_flat_five?
+      return if minor_seventh_flat_five?
+      return if minor_seventh?
+
+      @chord_string.include?('minflat5')
+    end
+
     def minor_triad?
       return if minor_seventh_flat_five?
       return if minor_seventh?
+      return if minor_triad_flat_five?
 
       @chord_string.include?('min')
     end

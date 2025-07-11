@@ -9,10 +9,12 @@ module ChordExpression
 
     # @see ChordParser#major_triad?
     # @see ChordParser#minor_triad?
+    # @see ChordParser#minor_triad_flat_five?
     # @see ChordParser#augmented_triad?
     # @see ChordParser#diminished_triad?
     def triad?
       return true if @chord_parser.major_triad?
+      return true if @chord_parser.minor_triad_flat_five?
       return true if @chord_parser.minor_triad?
       return true if @chord_parser.augmented_triad?
       return true if @chord_parser.diminished_triad?
@@ -76,6 +78,8 @@ module ChordExpression
         @root_note.diminished_fifth
       elsif @chord_parser.minor_seventh_flat_five?
         @root_note.diminished_fifth
+      elsif @chord_parser.minor_triad_flat_five?
+        @root_note.diminished_fifth
       else
         @root_note.perfect_fifth
       end
@@ -114,6 +118,8 @@ module ChordExpression
         '7'
       elsif @chord_parser.diminished_seventh?
         'dim7'
+      elsif @chord_parser.minor_triad_flat_five?
+        'minflat5'
       elsif @chord_parser.minor_triad?
         'min'
       elsif @chord_parser.major_triad?
