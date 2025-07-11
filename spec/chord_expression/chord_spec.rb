@@ -34,8 +34,38 @@ RSpec.describe ChordExpression::Chord do
   end
 
   describe '#seventh?' do
+    it 'returns true for minor major seventh' do
+      chord_parser = ChordExpression::ChordParser.new('Cmmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh?).to be(true)
+    end
+
+    it 'returns true for minor seventh flat five' do
+      chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh?).to be(true)
+    end
+
+    it 'returns true for minor seventh' do
+      chord_parser = ChordExpression::ChordParser.new('Cmin7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh?).to be(true)
+    end
+
     it 'returns true for major seventh' do
       chord_parser = ChordExpression::ChordParser.new('Cmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh?).to be(true)
+    end
+
+    it 'returns true for dominant seventh' do
+      chord_parser = ChordExpression::ChordParser.new('C7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh?).to be(true)
+    end
+
+    it 'returns true for diminished seventh' do
+      chord_parser = ChordExpression::ChordParser.new('Cdim7')
       chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
       expect(chord.seventh?).to be(true)
     end
