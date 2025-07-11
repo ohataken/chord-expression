@@ -15,6 +15,20 @@ RSpec.describe ChordExpression::ScaleParser do
     end
   end
 
+  describe '#parse' do
+    it 'parses A major scale' do
+      parser = ChordExpression::ScaleParser.new('Amaj')
+      scale = parser.parse
+      expect(scale.i_root_note.value).to eq(0)
+    end
+
+    it 'parses C major scale' do
+      parser = ChordExpression::ScaleParser.new('Cmin')
+      scale = parser.parse
+      expect(scale.i_root_note.value).to eq(3)
+    end
+  end
+
   describe '#major?' do
     it 'returns true for Amaj' do
       parser = ChordExpression::ScaleParser.new('Amaj')
