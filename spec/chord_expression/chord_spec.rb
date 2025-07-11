@@ -237,6 +237,74 @@ RSpec.describe ChordExpression::Chord do
     end
   end
 
+  describe '#chord_modifier_name' do
+    it 'returns the chord modifier name for Cmmaj7' do
+      chord_parser = ChordExpression::ChordParser.new('Cmmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_modifier_name).to eq('mmaj7')
+    end
+
+    it 'returns the chord modifier name for Cmin7flat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_modifier_name).to eq('min7flat5')
+    end
+
+    it 'returns the chord modifier name for Cmin7' do
+      chord_parser = ChordExpression::ChordParser.new('Cmin7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_modifier_name).to eq('min7')
+    end
+
+    it 'returns the chord modifier name for Cmaj7' do
+      chord_parser = ChordExpression::ChordParser.new('Cmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_modifier_name).to eq('maj7')
+    end
+
+    it 'returns the chord modifier name for C7' do
+      chord_parser = ChordExpression::ChordParser.new('C7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_modifier_name).to eq('7')
+    end
+
+    it 'returns the chord modifier name for Cdim7' do
+      chord_parser = ChordExpression::ChordParser.new('Cdim7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_modifier_name).to eq('dim7')
+    end
+
+    it 'returns the chord modifier name for Cminflat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cminflat5')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_modifier_name).to eq('minflat5')
+    end
+
+    it 'returns the chord modifier name for Cmin' do
+      chord_parser = ChordExpression::ChordParser.new('Cmin')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_modifier_name).to eq('min')
+    end
+
+    it 'returns the chord modifier name for Cmaj' do
+      chord_parser = ChordExpression::ChordParser.new('Cmaj')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_modifier_name).to eq('maj')
+    end
+
+    it 'returns the chord modifier name for Caug' do
+      chord_parser = ChordExpression::ChordParser.new('Caug')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_modifier_name).to eq('aug')
+    end
+
+    it 'returns the chord modifier name for Cdim' do
+      chord_parser = ChordExpression::ChordParser.new('Cdim')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.chord_modifier_name).to eq('dim')
+    end
+  end
+
   describe '#chord_name_with_flat' do
     it 'returns the chord name with flat' do
       chord_parser = ChordExpression::ChordParser.new('Csharpmaj7')
