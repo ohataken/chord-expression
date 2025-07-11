@@ -19,12 +19,14 @@ module ChordExpression
     end
 
     # @see ChordParser#minor_major_seventh?
+    # @see ChordParser#minor_seventh_flat_five?
     # @see ChordParser#minor_seventh?
     # @see ChordParser#major_seventh?
     # @see ChordParser#dominant_seventh?
     # @see ChordParser#diminished_seventh?
     def seventh?
       return true if @chord_parser.minor_major_seventh?
+      return true if @chord_parser.minor_seventh_flat_five?
       return true if @chord_parser.minor_seventh?
       return true if @chord_parser.major_seventh?
       return true if @chord_parser.dominant_seventh?
@@ -32,12 +34,14 @@ module ChordExpression
     end
 
     # @see ChordParser#minor_major_seventh?
+    # @see ChordParser#minor_seventh_flat_five?
     # @see ChordParser#minor_seventh?
     # @see ChordParser#minor_triad?
     # @see ChordParser#augmented_triad?
     # @see ChordParser#diminished_triad?
     def minor_third?
       return true if @chord_parser.minor_major_seventh?
+      return true if @chord_parser.minor_seventh_flat_five?
       return true if @chord_parser.minor_seventh?
       return true if @chord_parser.minor_triad?
       return true if @chord_parser.augmented_triad?
@@ -70,6 +74,8 @@ module ChordExpression
         @root_note.augmented_fifth
       elsif @chord_parser.diminished_triad?
         @root_note.diminished_fifth
+      elsif @chord_parser.minor_seventh_flat_five?
+        @root_note.diminished_fifth
       else
         @root_note.perfect_fifth
       end
@@ -80,6 +86,8 @@ module ChordExpression
 
       if @chord_parser.minor_major_seventh?
         @root_note.major_seventh
+      elsif @chord_parser.minor_seventh_flat_five?
+        @root_note.minor_seventh
       elsif @chord_parser.minor_seventh?
         @root_note.minor_seventh
       elsif @chord_parser.major_seventh?
@@ -96,6 +104,8 @@ module ChordExpression
     def chord_modifier_name
       if @chord_parser.minor_major_seventh?
         'mmaj7'
+      elsif @chord_parser.minor_seventh_flat_five?
+        'min7flat5'
       elsif @chord_parser.minor_seventh?
         'min7'
       elsif @chord_parser.major_seventh?
