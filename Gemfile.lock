@@ -7,6 +7,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.6.2)
+    docile (1.4.1)
     rake (13.3.0)
     rspec (3.13.1)
       rspec-core (~> 3.13.0)
@@ -21,6 +22,12 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.4)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.13.1)
+    simplecov_json_formatter (0.1.4)
     yard (0.9.37)
 
 PLATFORMS
@@ -31,6 +38,7 @@ DEPENDENCIES
   chord_expression!
   rake (~> 13.0)
   rspec (~> 3.0)
+  simplecov
   yard
 
 BUNDLED WITH
