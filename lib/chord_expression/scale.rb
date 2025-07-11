@@ -71,5 +71,12 @@ module ChordExpression
         chord_parser.parse
       end
     end
+
+    def iv_seventh_chord
+      if major?
+        chord_parser = ChordParser.new("#{iv_root_note.note_name_with_sharp}maj7")
+        chord_parser.parse
+      end
+    end
   end
 end
