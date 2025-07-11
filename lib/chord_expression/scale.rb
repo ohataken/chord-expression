@@ -14,5 +14,11 @@ module ChordExpression
         @root_note
       end
     end
+
+    def ii_root_note
+      if major?
+        Note.new((@root_note.value + 2) % 12)
+      end
+    end
   end
 end
