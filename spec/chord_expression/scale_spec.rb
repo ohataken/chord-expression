@@ -32,4 +32,12 @@ RSpec.describe ChordExpression::Scale do
       expect(scale.iv_root_note.value).to eq(note.value + 5)
     end
   end
+
+  describe '#v_root_note' do
+    it 'returns the v root note' do
+      note = ChordExpression::Note.new(0)
+      scale = ChordExpression::Scale.new(note)
+      expect(scale.v_root_note.value).to eq(note.value + 7)
+    end
+  end
 end
