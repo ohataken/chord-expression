@@ -194,10 +194,46 @@ RSpec.describe ChordExpression::Chord do
   end
 
   describe '#seventh' do
-    it 'returns the seventh of the chord' do
+    it 'returns the seventh of Cmmaj7' do
+      chord_parser = ChordExpression::ChordParser.new('Cmmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh.value).to be(2)
+    end
+
+    it 'returns the seventh of Cmin7flat5' do
+      chord_parser = ChordExpression::ChordParser.new('Cmin7flat5')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh.value).to be(1)
+    end
+
+    it 'returns the seventh of Cmin7' do
+      chord_parser = ChordExpression::ChordParser.new('Cmin7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh.value).to be(1)
+    end
+
+    it 'returns the seventh of Cmaj7' do
       chord_parser = ChordExpression::ChordParser.new('Cmaj7')
       chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
       expect(chord.seventh.value).to be(2)
+    end
+
+    it 'returns the seventh of Cmaj7' do
+      chord_parser = ChordExpression::ChordParser.new('Cmaj7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh.value).to be(2)
+    end
+
+    it 'returns the seventh of C7' do
+      chord_parser = ChordExpression::ChordParser.new('C7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh.value).to be(1)
+    end
+
+    it 'returns the seventh of Cdim7' do
+      chord_parser = ChordExpression::ChordParser.new('Cdim7')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.seventh.value).to be(0)
     end
   end
 
