@@ -7,6 +7,30 @@ RSpec.describe ChordExpression::Chord do
       chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
       expect(chord.triad?).to be(true)
     end
+
+    it 'returns true for minor triad flat five' do
+      chord_parser = ChordExpression::ChordParser.new('Cminflat5')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.triad?).to be(true)
+    end
+
+    it 'returns true for minor triad' do
+      chord_parser = ChordExpression::ChordParser.new('Cmin')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.triad?).to be(true)
+    end
+
+    it 'returns true for augmented triad' do
+      chord_parser = ChordExpression::ChordParser.new('Caug')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.triad?).to be(true)
+    end
+
+    it 'returns true for diminished triad' do
+      chord_parser = ChordExpression::ChordParser.new('Cdim')
+      chord = ChordExpression::Chord.new(chord_parser, chord_parser.parse_root_note)
+      expect(chord.triad?).to be(true)
+    end
   end
 
   describe '#seventh?' do
